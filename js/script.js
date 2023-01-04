@@ -6,8 +6,11 @@ for(let i = 0; i < SQAURES; i++){
     const square = document.createElement('div');
     square.classList.add('square');
 
-    square.addEventListener('touchstart', ()=> setColor(square));
-    square.addEventListener('touchend', ()=> removeColor(square));
+    document.addEventListener('touchmove', ()=>{
+        square.addEventListener('touchstart', ()=> setColor(square));
+        square.addEventListener('touchend', ()=> removeColor(square));
+    })
+    
 
 
     container.appendChild(square);
