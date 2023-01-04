@@ -6,7 +6,7 @@ for(let i = 0; i < SQAURES; i++){
     const square = document.createElement('div');
     square.classList.add('square');
 
-    square.addEventListener('pointerover', ()=> setColor(square));
+    square.addEventListener('pointerenter', ()=> setColor(square));
     square.addEventListener('mouseout', ()=> removeColor(square));
 
     container.appendChild(square);
