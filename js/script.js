@@ -6,7 +6,10 @@ for(let i = 0; i < SQAURES; i++){
     const square = document.createElement('div');
     square.classList.add('square');
 
-        square.addEventListener('touchmove', ()=> setColor(square));
+        square.addEventListener('touchmove', (e)=> {
+            e.preventDefault();
+            setColor(square)
+        });
         square.addEventListener('touchend', ()=> removeColor(square));
     
 
@@ -15,6 +18,7 @@ for(let i = 0; i < SQAURES; i++){
 }
 
 function setColor(element){
+
     const color = getRandomColor();
     element.style.background = color;
     element.style.boxShadow = `0 0 2px ${color} , 0 0 10px, ${color}`;
